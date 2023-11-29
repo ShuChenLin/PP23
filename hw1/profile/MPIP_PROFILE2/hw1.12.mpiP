@@ -1,0 +1,736 @@
+@ mpiP
+@ Command : /home/pp23/pp23s43/hw1/./hw1 536869888 testcases/33.in testcases/33.out 
+@ Version                  : 3.5.0
+@ MPIP Build date          : Sep 18 2023, 22:24:25
+@ Start time               : 2023 10 25 05:56:45
+@ Stop time                : 2023 10 25 05:57:00
+@ Timer Used               : PMPI_Wtime
+@ MPIP env var             : -y -l
+@ Collector Rank           : 0
+@ Collector PID            : 217262
+@ Final Output Dir         : .
+@ Report generation        : Collective
+@ MPI Task Assignment      : 0 apollo32
+@ MPI Task Assignment      : 1 apollo32
+@ MPI Task Assignment      : 2 apollo32
+@ MPI Task Assignment      : 3 apollo32
+@ MPI Task Assignment      : 4 apollo32
+@ MPI Task Assignment      : 5 apollo32
+@ MPI Task Assignment      : 6 apollo32
+@ MPI Task Assignment      : 7 apollo32
+@ MPI Task Assignment      : 8 apollo32
+@ MPI Task Assignment      : 9 apollo32
+@ MPI Task Assignment      : 10 apollo32
+@ MPI Task Assignment      : 11 apollo33
+
+---------------------------------------------------------------------------
+@--- MPI Time (seconds) ---------------------------------------------------
+---------------------------------------------------------------------------
+Task    AppTime    MPITime     MPI%
+   0       15.2       10.6    69.44
+   1       15.2       9.46    62.25
+   2       15.2        9.3    61.23
+   3       15.2       9.35    61.54
+   4       15.2       8.95    58.90
+   5       15.2       9.05    59.59
+   6       15.2       8.81    57.97
+   7       15.2       9.24    60.80
+   8       15.2       9.14    60.18
+   9       15.2       9.56    62.91
+  10       15.2       9.76    64.26
+  11       19.5         16    81.86
+   *        187        119    63.84
+---------------------------------------------------------------------------
+@--- Callsites: 106 -------------------------------------------------------
+---------------------------------------------------------------------------
+ ID Lev File/Address        Line Parent_Funct             MPI_Call
+  1   0 0x7fe9a89fd304           [unknown]                File_read_at
+  2   0 0x7fe9a89fa7d8           [unknown]                File_close
+  3   0 0x7fe9a89f30e2           [unknown]                Allreduce
+  4   0 0x7fe9a89ff301           [unknown]                File_write_at
+  5   0 0x7fe9a8a109ce           [unknown]                Sendrecv
+  6   0 0x7fe9a89fc43f           [unknown]                File_open
+  7   0 0x7fe9a89fa7d8           [unknown]                File_close
+  8   0 0x7fe9a89fc43f           [unknown]                File_open
+  9   0 0x7f9488f8c9ce           [unknown]                Sendrecv
+ 10   0 0x7f9488f767d8           [unknown]                File_close
+ 11   0 0x7f9488f79304           [unknown]                File_read_at
+ 12   0 0x7f9488f7b301           [unknown]                File_write_at
+ 13   0 0x7f9488f6f0e2           [unknown]                Allreduce
+ 14   0 0x7f9488f7843f           [unknown]                File_open
+ 15   0 0x7f9488f767d8           [unknown]                File_close
+ 16   0 0x7f9488f7843f           [unknown]                File_open
+ 17   0 0x7fd3b10f8304           [unknown]                File_read_at
+ 18   0 0x7fd3b10f57d8           [unknown]                File_close
+ 19   0 0x7fd3b10ee0e2           [unknown]                Allreduce
+ 20   0 0x7fd3b10fa301           [unknown]                File_write_at
+ 21   0 0x7fd3b110b9ce           [unknown]                Sendrecv
+ 22   0 0x7fd3b10f743f           [unknown]                File_open
+ 23   0 0x7fd3b10f57d8           [unknown]                File_close
+ 24   0 0x7fd3b110b9ce           [unknown]                Sendrecv
+ 25   0 0x7fd3b10f743f           [unknown]                File_open
+ 26   0 0x7f4d8a0a07d8           [unknown]                File_close
+ 27   0 0x7f4d8a0a3304           [unknown]                File_read_at
+ 28   0 0x7f4d8a0a5301           [unknown]                File_write_at
+ 29   0 0x7f4d8a0990e2           [unknown]                Allreduce
+ 30   0 0x7f4d8a0b69ce           [unknown]                Sendrecv
+ 31   0 0x7f4d8a0a243f           [unknown]                File_open
+ 32   0 0x7f4d8a0a07d8           [unknown]                File_close
+ 33   0 0x7f4d8a0b69ce           [unknown]                Sendrecv
+ 34   0 0x7f4d8a0a243f           [unknown]                File_open
+ 35   0 0x7f802b32c9ce           [unknown]                Sendrecv
+ 36   0 0x7f802b319304           [unknown]                File_read_at
+ 37   0 0x7f802b3167d8           [unknown]                File_close
+ 38   0 0x7f802b32c9ce           [unknown]                Sendrecv
+ 39   0 0x7f802b30f0e2           [unknown]                Allreduce
+ 40   0 0x7f802b31b301           [unknown]                File_write_at
+ 41   0 0x7f802b31843f           [unknown]                File_open
+ 42   0 0x7f802b3167d8           [unknown]                File_close
+ 43   0 0x7f802b31843f           [unknown]                File_open
+ 44   0 0x7ff16845e304           [unknown]                File_read_at
+ 45   0 0x7ff16845b7d8           [unknown]                File_close
+ 46   0 0x7ff1684540e2           [unknown]                Allreduce
+ 47   0 0x7ff168460301           [unknown]                File_write_at
+ 48   0 0x7ff1684719ce           [unknown]                Sendrecv
+ 49   0 0x7ff16845d43f           [unknown]                File_open
+ 50   0 0x7ff16845b7d8           [unknown]                File_close
+ 51   0 0x7ff1684719ce           [unknown]                Sendrecv
+ 52   0 0x7ff16845d43f           [unknown]                File_open
+ 53   0 0x7f78bde899ce           [unknown]                Sendrecv
+ 54   0 0x7f78bde76304           [unknown]                File_read_at
+ 55   0 0x7f78bde899ce           [unknown]                Sendrecv
+ 56   0 0x7f78bde737d8           [unknown]                File_close
+ 57   0 0x7f78bde6c0e2           [unknown]                Allreduce
+ 58   0 0x7f78bde78301           [unknown]                File_write_at
+ 59   0 0x7f78bde7543f           [unknown]                File_open
+ 60   0 0x7f78bde737d8           [unknown]                File_close
+ 61   0 0x7f78bde7543f           [unknown]                File_open
+ 62   0 0x7f969b62b9ce           [unknown]                Sendrecv
+ 63   0 0x7f969b618304           [unknown]                File_read_at
+ 64   0 0x7f969b62b9ce           [unknown]                Sendrecv
+ 65   0 0x7f969b6157d8           [unknown]                File_close
+ 66   0 0x7f969b60e0e2           [unknown]                Allreduce
+ 67   0 0x7f969b61a301           [unknown]                File_write_at
+ 68   0 0x7f969b61743f           [unknown]                File_open
+ 69   0 0x7f969b6157d8           [unknown]                File_close
+ 70   0 0x7f969b61743f           [unknown]                File_open
+ 71   0 0x7faf2ab5c9ce           [unknown]                Sendrecv
+ 72   0 0x7faf2ab5c9ce           [unknown]                Sendrecv
+ 73   0 0x7faf2ab467d8           [unknown]                File_close
+ 74   0 0x7faf2ab49304           [unknown]                File_read_at
+ 75   0 0x7faf2ab4b301           [unknown]                File_write_at
+ 76   0 0x7faf2ab3f0e2           [unknown]                Allreduce
+ 77   0 0x7faf2ab4843f           [unknown]                File_open
+ 78   0 0x7faf2ab467d8           [unknown]                File_close
+ 79   0 0x7faf2ab4843f           [unknown]                File_open
+ 80   0 0x7f4d8811c9ce           [unknown]                Sendrecv
+ 81   0 0x7f4d88109304           [unknown]                File_read_at
+ 82   0 0x7f4d881067d8           [unknown]                File_close
+ 83   0 0x7f4d8811c9ce           [unknown]                Sendrecv
+ 84   0 0x7f4d880ff0e2           [unknown]                Allreduce
+ 85   0 0x7f4d8810b301           [unknown]                File_write_at
+ 86   0 0x7f4d8810843f           [unknown]                File_open
+ 87   0 0x7f4d881067d8           [unknown]                File_close
+ 88   0 0x7f4d8810843f           [unknown]                File_open
+ 89   0 0x7fcf727d7304           [unknown]                File_read_at
+ 90   0 0x7fcf727d47d8           [unknown]                File_close
+ 91   0 0x7fcf727cd0e2           [unknown]                Allreduce
+ 92   0 0x7fcf727d9301           [unknown]                File_write_at
+ 93   0 0x7fcf727ea9ce           [unknown]                Sendrecv
+ 94   0 0x7fcf727d643f           [unknown]                File_open
+ 95   0 0x7fcf727d47d8           [unknown]                File_close
+ 96   0 0x7fcf727d643f           [unknown]                File_open
+ 97   0 0x7fcf727ea9ce           [unknown]                Sendrecv
+ 98   0 0x7ff9afc827d8           [unknown]                File_close
+ 99   0 0x7ff9afc85304           [unknown]                File_read_at
+100   0 0x7ff9afc87301           [unknown]                File_write_at
+101   0 0x7ff9afc7b0e2           [unknown]                Allreduce
+102   0 0x7ff9afc989ce           [unknown]                Sendrecv
+103   0 0x7ff9afc8443f           [unknown]                File_open
+104   0 0x7ff9afc827d8           [unknown]                File_close
+105   0 0x7ff9afc8443f           [unknown]                File_open
+106   0 0x7ff9afc989ce           [unknown]                Sendrecv
+---------------------------------------------------------------------------
+@--- Aggregate Time (top twenty, descending, milliseconds) ----------------
+---------------------------------------------------------------------------
+Call                 Site       Time    App%    MPI%      Count    COV
+File_close             15   1.05e+04    5.64    8.83          1   0.00
+File_write_at          75   6.63e+03    3.55    5.57          1   0.00
+File_write_at         100   6.63e+03    3.55    5.57          1   0.00
+File_write_at          85   6.63e+03    3.55    5.57          1   0.00
+File_write_at          92   6.63e+03    3.55    5.57          1   0.00
+File_write_at          67   6.63e+03    3.55    5.57          1   0.00
+File_write_at          20   6.63e+03    3.55    5.57          1   0.00
+File_write_at          58   6.63e+03    3.55    5.57          1   0.00
+File_write_at          28   6.63e+03    3.55    5.57          1   0.00
+File_write_at           4   6.63e+03    3.55    5.57          1   0.00
+File_write_at          47   6.63e+03    3.55    5.57          1   0.00
+File_close             42   6.23e+03    3.34    5.23          1   0.00
+Allreduce              13   3.42e+03    1.83    2.87          8   0.00
+Allreduce               3   2.96e+03    1.59    2.49          8   0.00
+Sendrecv                9   1.43e+03    0.77    1.20          8   0.00
+Sendrecv               30   1.29e+03    0.69    1.08          8   0.00
+Allreduce              29   1.09e+03    0.58    0.91          8   0.00
+Allreduce              66   1.05e+03    0.56    0.88          8   0.00
+Allreduce              76   1.05e+03    0.56    0.88          8   0.00
+Sendrecv               55   1.04e+03    0.56    0.87          8   0.00
+---------------------------------------------------------------------------
+@--- Aggregate Sent Message Size (top twenty, descending, bytes) ----------
+---------------------------------------------------------------------------
+Call                 Site      Count      Total       Avrg  Sent%
+Sendrecv               80          8   7.16e+08   8.95e+07   4.55
+Sendrecv               83          8   7.16e+08   8.95e+07   4.55
+Sendrecv               93          8   7.16e+08   8.95e+07   4.55
+Sendrecv               64          8   7.16e+08   8.95e+07   4.55
+Sendrecv               71          8   7.16e+08   8.95e+07   4.55
+Sendrecv               72          8   7.16e+08   8.95e+07   4.55
+Sendrecv               97          8   7.16e+08   8.95e+07   4.55
+Sendrecv              102          8   7.16e+08   8.95e+07   4.55
+Sendrecv              106          8   7.16e+08   8.95e+07   4.55
+Sendrecv               21          8   7.16e+08   8.95e+07   4.55
+Sendrecv               24          8   7.16e+08   8.95e+07   4.55
+Sendrecv               30          8   7.16e+08   8.95e+07   4.55
+Sendrecv                5          8   7.16e+08   8.95e+07   4.55
+Sendrecv                9          8   7.16e+08   8.95e+07   4.55
+Sendrecv               48          8   7.16e+08   8.95e+07   4.55
+Sendrecv               51          8   7.16e+08   8.95e+07   4.55
+Sendrecv               53          8   7.16e+08   8.95e+07   4.55
+Sendrecv               55          8   7.16e+08   8.95e+07   4.55
+Sendrecv               62          8   7.16e+08   8.95e+07   4.55
+Sendrecv               33          8   7.16e+08   8.95e+07   4.55
+---------------------------------------------------------------------------
+@--- Aggregate Collective Time (top twenty, descending) -------------------
+---------------------------------------------------------------------------
+Call                 MPI Time %             Comm Size             Data Size
+Allreduce              0.000322          8 -       15          0 -        7
+---------------------------------------------------------------------------
+@--- Aggregate I/O Size (top twenty, descending, bytes) -------------------
+---------------------------------------------------------------------------
+Call                 Site      Count      Total       Avrg   I/O%
+File_write_at           4          1   1.79e+08   1.79e+08   4.17
+File_read_at            1          1   1.79e+08   1.79e+08   4.17
+File_write_at          20          1   1.79e+08   1.79e+08   4.17
+File_read_at           17          1   1.79e+08   1.79e+08   4.17
+File_read_at           63          1   1.79e+08   1.79e+08   4.17
+File_write_at          58          1   1.79e+08   1.79e+08   4.17
+File_read_at           54          1   1.79e+08   1.79e+08   4.17
+File_write_at          67          1   1.79e+08   1.79e+08   4.17
+File_read_at           11          1   1.79e+08   1.79e+08   4.17
+File_write_at          12          1   1.79e+08   1.79e+08   4.17
+File_read_at           27          1   1.79e+08   1.79e+08   4.17
+File_write_at          28          1   1.79e+08   1.79e+08   4.17
+File_read_at           44          1   1.79e+08   1.79e+08   4.17
+File_write_at          40          1   1.79e+08   1.79e+08   4.17
+File_write_at          47          1   1.79e+08   1.79e+08   4.17
+File_read_at           36          1   1.79e+08   1.79e+08   4.17
+File_read_at           74          1   1.79e+08   1.79e+08   4.17
+File_write_at          75          1   1.79e+08   1.79e+08   4.17
+File_read_at           89          1   1.79e+08   1.79e+08   4.17
+File_write_at          85          1   1.79e+08   1.79e+08   4.17
+---------------------------------------------------------------------------
+@--- Callsite Time statistics (all, milliseconds): 106 --------------------
+---------------------------------------------------------------------------
+Name              Site Rank  Count      Max     Mean      Min   App%   MPI%
+Allreduce            3    0      8      534      371      106  19.51  28.10
+Allreduce            3    *      8      534      371        0   1.59   2.49
+
+Allreduce           13   11      8      602      427     27.3  17.52  21.40
+Allreduce           13    *      8      602      427        0   1.83   2.87
+
+Allreduce           19    2      8      346      128   0.0811   6.74  11.01
+Allreduce           19    *      8      346      128        0   0.55   0.86
+
+Allreduce           29   10      8      334      136   0.0493   7.16  11.14
+Allreduce           29    *      8      334      136        0   0.58   0.91
+
+Allreduce           39    7      8      270      108     30.6   5.66   9.32
+Allreduce           39    *      8      270      108        0   0.46   0.72
+
+Allreduce           46    6      8      304       78   0.0728   4.10   7.08
+Allreduce           46    *      8      304       78        0   0.33   0.52
+
+Allreduce           57    3      8      319     93.1   0.0847   4.90   7.96
+Allreduce           57    *      8      319     93.1        0   0.40   0.62
+
+Allreduce           66    1      8      346      131   0.0436   6.89  11.07
+Allreduce           66    *      8      346      131        0   0.56   0.88
+
+Allreduce           76    9      8      334      131   0.0456   6.88  10.93
+Allreduce           76    *      8      334      131        0   0.56   0.88
+
+Allreduce           84    5      8      376     72.8   0.0543   3.83   6.43
+Allreduce           84    *      8      376     72.8        0   0.31   0.49
+
+Allreduce           91    4      8      260     88.2     2.04   4.65   7.89
+Allreduce           91    *      8      260     88.2        0   0.38   0.59
+
+Allreduce          101    8      8      224      111     3.12   5.84   9.71
+Allreduce          101    *      8      224      111        0   0.48   0.75
+
+File_close           2    0      1     2.27     2.27     2.27   0.01   0.02
+File_close           2    *      1     2.27     2.27        0   0.00   0.00
+
+File_close           7    0      1     1.21     1.21     1.21   0.01   0.01
+File_close           7    *      1     1.21     1.21        0   0.00   0.00
+
+File_close          10   11      1     68.4     68.4     68.4   0.35   0.43
+File_close          10    *      1     68.4     68.4        0   0.04   0.06
+
+File_close          15   11      1 1.05e+04 1.05e+04 1.05e+04  53.98  65.94
+File_close          15    *      1 1.05e+04 1.05e+04        0   5.64   8.83
+
+File_close          18    2      1     1.79     1.79     1.79   0.01   0.02
+File_close          18    *      1     1.79     1.79        0   0.00   0.00
+
+File_close          23    2      1     1.22     1.22     1.22   0.01   0.01
+File_close          23    *      1     1.22     1.22        0   0.00   0.00
+
+File_close          26   10      1      1.4      1.4      1.4   0.01   0.01
+File_close          26    *      1      1.4      1.4        0   0.00   0.00
+
+File_close          32   10      1     1.22     1.22     1.22   0.01   0.01
+File_close          32    *      1     1.22     1.22        0   0.00   0.00
+
+File_close          37    7      1       19       19       19   0.12   0.21
+File_close          37    *      1       19       19        0   0.01   0.02
+
+File_close          42    7      1 6.23e+03 6.23e+03 6.23e+03  40.99  67.42
+File_close          42    *      1 6.23e+03 6.23e+03        0   3.34   5.23
+
+File_close          45    6      1     1.09     1.09     1.09   0.01   0.01
+File_close          45    *      1     1.09     1.09        0   0.00   0.00
+
+File_close          50    6      1     1.24     1.24     1.24   0.01   0.01
+File_close          50    *      1     1.24     1.24        0   0.00   0.00
+
+File_close          56    3      1     20.9     20.9     20.9   0.14   0.22
+File_close          56    *      1     20.9     20.9        0   0.01   0.02
+
+File_close          60    3      1      1.2      1.2      1.2   0.01   0.01
+File_close          60    *      1      1.2      1.2        0   0.00   0.00
+
+File_close          65    1      1       20       20       20   0.13   0.21
+File_close          65    *      1       20       20        0   0.01   0.02
+
+File_close          69    1      1     1.18     1.18     1.18   0.01   0.01
+File_close          69    *      1     1.18     1.18        0   0.00   0.00
+
+File_close          73    9      1     13.8     13.8     13.8   0.09   0.14
+File_close          73    *      1     13.8     13.8        0   0.01   0.01
+
+File_close          78    9      1    0.128    0.128    0.128   0.00   0.00
+File_close          78    *      1    0.128    0.128        0   0.00   0.00
+
+File_close          82    5      1     19.7     19.7     19.7   0.13   0.22
+File_close          82    *      1     19.7     19.7        0   0.01   0.02
+
+File_close          87    5      1     1.17     1.17     1.17   0.01   0.01
+File_close          87    *      1     1.17     1.17        0   0.00   0.00
+
+File_close          90    4      1     1.44     1.44     1.44   0.01   0.02
+File_close          90    *      1     1.44     1.44        0   0.00   0.00
+
+File_close          95    4      1     1.17     1.17     1.17   0.01   0.01
+File_close          95    *      1     1.17     1.17        0   0.00   0.00
+
+File_close          98    8      1     0.67     0.67     0.67   0.00   0.01
+File_close          98    *      1     0.67     0.67        0   0.00   0.00
+
+File_close         104    8      1     1.12     1.12     1.12   0.01   0.01
+File_close         104    *      1     1.12     1.12        0   0.00   0.00
+
+File_open            6    0      1     1.47     1.47     1.47   0.01   0.01
+File_open            6    *      1     1.47     1.47        0   0.00   0.00
+
+File_open            8    0      1      4.4      4.4      4.4   0.03   0.04
+File_open            8    *      1      4.4      4.4        0   0.00   0.00
+
+File_open           14   11      1     1.48     1.48     1.48   0.01   0.01
+File_open           14    *      1     1.48     1.48        0   0.00   0.00
+
+File_open           16   11      1     49.6     49.6     49.6   0.25   0.31
+File_open           16    *      1     49.6     49.6        0   0.03   0.04
+
+File_open           22    2      1     1.47     1.47     1.47   0.01   0.02
+File_open           22    *      1     1.47     1.47        0   0.00   0.00
+
+File_open           25    2      1     5.09     5.09     5.09   0.03   0.05
+File_open           25    *      1     5.09     5.09        0   0.00   0.00
+
+File_open           31   10      1     1.47     1.47     1.47   0.01   0.02
+File_open           31    *      1     1.47     1.47        0   0.00   0.00
+
+File_open           34   10      1     4.44     4.44     4.44   0.03   0.05
+File_open           34    *      1     4.44     4.44        0   0.00   0.00
+
+File_open           41    7      1     1.47     1.47     1.47   0.01   0.02
+File_open           41    *      1     1.47     1.47        0   0.00   0.00
+
+File_open           43    7      1     6.98     6.98     6.98   0.05   0.08
+File_open           43    *      1     6.98     6.98        0   0.00   0.01
+
+File_open           49    6      1     1.47     1.47     1.47   0.01   0.02
+File_open           49    *      1     1.47     1.47        0   0.00   0.00
+
+File_open           52    6      1     4.89     4.89     4.89   0.03   0.06
+File_open           52    *      1     4.89     4.89        0   0.00   0.00
+
+File_open           59    3      1     1.47     1.47     1.47   0.01   0.02
+File_open           59    *      1     1.47     1.47        0   0.00   0.00
+
+File_open           61    3      1     7.03     7.03     7.03   0.05   0.08
+File_open           61    *      1     7.03     7.03        0   0.00   0.01
+
+File_open           68    1      1     1.47     1.47     1.47   0.01   0.02
+File_open           68    *      1     1.47     1.47        0   0.00   0.00
+
+File_open           70    1      1     6.99     6.99     6.99   0.05   0.07
+File_open           70    *      1     6.99     6.99        0   0.00   0.01
+
+File_open           77    9      1     1.47     1.47     1.47   0.01   0.02
+File_open           77    *      1     1.47     1.47        0   0.00   0.00
+
+File_open           79    9      1     6.97     6.97     6.97   0.05   0.07
+File_open           79    *      1     6.97     6.97        0   0.00   0.01
+
+File_open           86    5      1     1.47     1.47     1.47   0.01   0.02
+File_open           86    *      1     1.47     1.47        0   0.00   0.00
+
+File_open           88    5      1     7.02     7.02     7.02   0.05   0.08
+File_open           88    *      1     7.02     7.02        0   0.00   0.01
+
+File_open           94    4      1     1.47     1.47     1.47   0.01   0.02
+File_open           94    *      1     1.47     1.47        0   0.00   0.00
+
+File_open           96    4      1     3.76     3.76     3.76   0.02   0.04
+File_open           96    *      1     3.76     3.76        0   0.00   0.00
+
+File_open          103    8      1     1.47     1.47     1.47   0.01   0.02
+File_open          103    *      1     1.47     1.47        0   0.00   0.00
+
+File_open          105    8      1     3.84     3.84     3.84   0.03   0.04
+File_open          105    *      1     3.84     3.84        0   0.00   0.00
+
+File_read_at         1    0      1      164      164      164   1.08   1.56
+File_read_at         1    *      1      164      164        0   0.09   0.14
+
+File_read_at        11   11      1     98.2     98.2     98.2   0.50   0.62
+File_read_at        11    *      1     98.2     98.2        0   0.05   0.08
+
+File_read_at        17    2      1      165      165      165   1.08   1.77
+File_read_at        17    *      1      165      165        0   0.09   0.14
+
+File_read_at        27   10      1      165      165      165   1.09   1.70
+File_read_at        27    *      1      165      165        0   0.09   0.14
+
+File_read_at        36    7      1      148      148      148   0.97   1.60
+File_read_at        36    *      1      148      148        0   0.08   0.12
+
+File_read_at        44    6      1      166      166      166   1.09   1.88
+File_read_at        44    *      1      166      166        0   0.09   0.14
+
+File_read_at        54    3      1      146      146      146   0.96   1.56
+File_read_at        54    *      1      146      146        0   0.08   0.12
+
+File_read_at        63    1      1      147      147      147   0.97   1.56
+File_read_at        63    *      1      147      147        0   0.08   0.12
+
+File_read_at        74    9      1      153      153      153   1.01   1.60
+File_read_at        74    *      1      153      153        0   0.08   0.13
+
+File_read_at        81    5      1      147      147      147   0.97   1.63
+File_read_at        81    *      1      147      147        0   0.08   0.12
+
+File_read_at        89    4      1      165      165      165   1.09   1.85
+File_read_at        89    *      1      165      165        0   0.09   0.14
+
+File_read_at        99    8      1      166      166      166   1.09   1.82
+File_read_at        99    *      1      166      166        0   0.09   0.14
+
+File_write_at        4    0      1 6.63e+03 6.63e+03 6.63e+03  43.65  62.86
+File_write_at        4    *      1 6.63e+03 6.63e+03        0   3.55   5.57
+
+File_write_at       12   11      1      367      367      367   1.88   2.30
+File_write_at       12    *      1      367      367        0   0.20   0.31
+
+File_write_at       20    2      1 6.63e+03 6.63e+03 6.63e+03  43.65  71.28
+File_write_at       20    *      1 6.63e+03 6.63e+03        0   3.55   5.57
+
+File_write_at       28   10      1 6.63e+03 6.63e+03 6.63e+03  43.65  67.93
+File_write_at       28    *      1 6.63e+03 6.63e+03        0   3.55   5.57
+
+File_write_at       40    7      1      405      405      405   2.66   4.38
+File_write_at       40    *      1      405      405        0   0.22   0.34
+
+File_write_at       47    6      1 6.63e+03 6.63e+03 6.63e+03  43.65  75.29
+File_write_at       47    *      1 6.63e+03 6.63e+03        0   3.55   5.57
+
+File_write_at       58    3      1 6.63e+03 6.63e+03 6.63e+03  43.64  70.92
+File_write_at       58    *      1 6.63e+03 6.63e+03        0   3.55   5.57
+
+File_write_at       67    1      1 6.63e+03 6.63e+03 6.63e+03  43.64  70.11
+File_write_at       67    *      1 6.63e+03 6.63e+03        0   3.55   5.57
+
+File_write_at       75    9      1 6.63e+03 6.63e+03 6.63e+03  43.65  69.38
+File_write_at       75    *      1 6.63e+03 6.63e+03        0   3.55   5.57
+
+File_write_at       85    5      1 6.63e+03 6.63e+03 6.63e+03  43.64  73.24
+File_write_at       85    *      1 6.63e+03 6.63e+03        0   3.55   5.57
+
+File_write_at       92    4      1 6.63e+03 6.63e+03 6.63e+03  43.65  74.11
+File_write_at       92    *      1 6.63e+03 6.63e+03        0   3.55   5.57
+
+File_write_at      100    8      1 6.63e+03 6.63e+03 6.63e+03  43.65  72.54
+File_write_at      100    *      1 6.63e+03 6.63e+03        0   3.55   5.57
+
+Sendrecv             5    0      8      197     97.5       77   5.14   7.40
+Sendrecv             5    *      8      197     97.5        0   0.42   0.65
+
+Sendrecv             9   11      8      300      179      141   7.36   8.99
+Sendrecv             9    *      8      300      179        0   0.77   1.20
+
+Sendrecv            21    2      8      196     94.1     76.2   4.96   8.10
+Sendrecv            21    *      8      196     94.1        0   0.40   0.63
+
+Sendrecv            24    2      8      142       90       57   4.74   7.74
+Sendrecv            24    *      8      142       90        0   0.39   0.60
+
+Sendrecv            30   10      8      189      162      141   8.51  13.24
+Sendrecv            30    *      8      189      162        0   0.69   1.08
+
+Sendrecv            33   10      8      163     72.1     27.3   3.80   5.91
+Sendrecv            33    *      8      163     72.1        0   0.31   0.48
+
+Sendrecv            35    7      8      206       95     76.2   5.00   8.23
+Sendrecv            35    *      8      206       95        0   0.41   0.64
+
+Sendrecv            38    7      8      169      101     42.3   5.33   8.76
+Sendrecv            38    *      8      169      101        0   0.43   0.68
+
+Sendrecv            48    6      8      197     93.8     76.2   4.94   8.52
+Sendrecv            48    *      8      197     93.8        0   0.40   0.63
+
+Sendrecv            51    6      8      149     78.5     38.1   4.13   7.13
+Sendrecv            51    *      8      149     78.5        0   0.34   0.53
+
+Sendrecv            53    3      8      205     95.2     76.2   5.01   8.14
+Sendrecv            53    *      8      205     95.2        0   0.41   0.64
+
+Sendrecv            55    3      8      236      130     63.7   6.82  11.09
+Sendrecv            55    *      8      236      130        0   0.56   0.87
+
+Sendrecv            62    1      8      206     98.7       77   5.19   8.34
+Sendrecv            62    *      8      206     98.7        0   0.42   0.66
+
+Sendrecv            64    1      8      213      102     56.6   5.36   8.61
+Sendrecv            64    *      8      213      102        0   0.44   0.68
+
+Sendrecv            71    9      8      201     93.5     74.5   4.92   7.82
+Sendrecv            71    *      8      201     93.5        0   0.40   0.63
+
+Sendrecv            72    9      8      271      120     57.4   6.31  10.02
+Sendrecv            72    *      8      271      120        0   0.51   0.80
+
+Sendrecv            80    5      8      202     93.9     75.9   4.94   8.29
+Sendrecv            80    *      8      202     93.9        0   0.40   0.63
+
+Sendrecv            83    5      8      251      114     50.8   6.01  10.08
+Sendrecv            83    *      8      251      114        0   0.49   0.77
+
+Sendrecv            93    4      8      194     92.9       76   4.89   8.31
+Sendrecv            93    *      8      194     92.9        0   0.40   0.62
+
+Sendrecv            97    4      8      144     86.8     50.2   4.57   7.76
+Sendrecv            97    *      8      144     86.8        0   0.37   0.58
+
+Sendrecv           102    8      8      192     92.3     74.6   4.86   8.08
+Sendrecv           102    *      8      192     92.3        0   0.40   0.62
+
+Sendrecv           106    8      8      202     88.8     61.7   4.68   7.77
+Sendrecv           106    *      8      202     88.8        0   0.38   0.60
+
+---------------------------------------------------------------------------
+@--- Callsite Message Sent statistics (all, sent bytes) -------------------
+---------------------------------------------------------------------------
+Name              Site Rank   Count       Max      Mean       Min       Sum
+Allreduce            3    0       8         4         4         4        32
+Allreduce            3    *       8         4         4         4        32
+
+Allreduce           13   11       8         4         4         4        32
+Allreduce           13    *       8         4         4         4        32
+
+Allreduce           19    2       8         4         4         4        32
+Allreduce           19    *       8         4         4         4        32
+
+Allreduce           29   10       8         4         4         4        32
+Allreduce           29    *       8         4         4         4        32
+
+Allreduce           39    7       8         4         4         4        32
+Allreduce           39    *       8         4         4         4        32
+
+Allreduce           46    6       8         4         4         4        32
+Allreduce           46    *       8         4         4         4        32
+
+Allreduce           57    3       8         4         4         4        32
+Allreduce           57    *       8         4         4         4        32
+
+Allreduce           66    1       8         4         4         4        32
+Allreduce           66    *       8         4         4         4        32
+
+Allreduce           76    9       8         4         4         4        32
+Allreduce           76    *       8         4         4         4        32
+
+Allreduce           84    5       8         4         4         4        32
+Allreduce           84    *       8         4         4         4        32
+
+Allreduce           91    4       8         4         4         4        32
+Allreduce           91    *       8         4         4         4        32
+
+Allreduce          101    8       8         4         4         4        32
+Allreduce          101    *       8         4         4         4        32
+
+Sendrecv             5    0       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv             5    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv             9   11       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv             9    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            21    2       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            21    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            24    2       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            24    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            30   10       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            30    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            33   10       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            33    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            35    7       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            35    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            38    7       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            38    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            48    6       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            48    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            51    6       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            51    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            53    3       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            53    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            55    3       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            55    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            62    1       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            62    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            64    1       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            64    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            71    9       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            71    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            72    9       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            72    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            80    5       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            80    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            83    5       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            83    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            93    4       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            93    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv            97    4       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv            97    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv           102    8       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv           102    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+Sendrecv           106    8       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+Sendrecv           106    *       8 8.948e+07 8.948e+07 8.948e+07 7.158e+08
+
+---------------------------------------------------------------------------
+@--- Callsite I/O statistics (all, I/O bytes) -----------------------------
+---------------------------------------------------------------------------
+Name              Site Rank   Count       Max      Mean       Min       Sum
+File_read_at         1    0       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at         1    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        11   11       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        11    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        17    2       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        17    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        27   10       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        27    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        36    7       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        36    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        44    6       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        44    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        54    3       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        54    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        63    1       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        63    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        74    9       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        74    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        81    5       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        81    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        89    4       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        89    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_read_at        99    8       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_read_at        99    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at        4    0       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at        4    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at       12   11       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at       12    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at       20    2       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at       20    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at       28   10       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at       28    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at       40    7       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at       40    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at       47    6       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at       47    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at       58    3       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at       58    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at       67    1       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at       67    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at       75    9       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at       75    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at       85    5       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at       85    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at       92    4       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at       92    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+File_write_at      100    8       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+File_write_at      100    *       1  1.79e+08  1.79e+08  1.79e+08  1.79e+08
+
+---------------------------------------------------------------------------
+@--- End of Report --------------------------------------------------------
+---------------------------------------------------------------------------

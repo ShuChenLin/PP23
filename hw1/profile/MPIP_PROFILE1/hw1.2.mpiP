@@ -1,0 +1,170 @@
+@ mpiP
+@ Command : /home/pp23/pp23s43/hw1/./hw1 536869888 testcases/33.in testcases/33.out 
+@ Version                  : 3.5.0
+@ MPIP Build date          : Sep 18 2023, 22:24:25
+@ Start time               : 2023 10 25 06:00:43
+@ Stop time                : 2023 10 25 06:01:14
+@ Timer Used               : PMPI_Wtime
+@ MPIP env var             : -y -l
+@ Collector Rank           : 0
+@ Collector PID            : 45128
+@ Final Output Dir         : .
+@ Report generation        : Collective
+@ MPI Task Assignment      : 0 apollo33
+@ MPI Task Assignment      : 1 apollo33
+
+---------------------------------------------------------------------------
+@--- MPI Time (seconds) ---------------------------------------------------
+---------------------------------------------------------------------------
+Task    AppTime    MPITime     MPI%
+   0       31.1       15.2    48.76
+   1       31.1       15.7    50.61
+   *       62.2       30.9    49.68
+---------------------------------------------------------------------------
+@--- Callsites: 16 --------------------------------------------------------
+---------------------------------------------------------------------------
+ ID Lev File/Address        Line Parent_Funct             MPI_Call
+  1   0 0x7feb54116304           [unknown]                File_read_at
+  2   0 0x7feb541137d8           [unknown]                File_close
+  3   0 0x7feb5410c0e2           [unknown]                Allreduce
+  4   0 0x7feb54118301           [unknown]                File_write_at
+  5   0 0x7feb541299ce           [unknown]                Sendrecv
+  6   0 0x7feb5411543f           [unknown]                File_open
+  7   0 0x7feb541137d8           [unknown]                File_close
+  8   0 0x7feb5411543f           [unknown]                File_open
+  9   0 0x7ff7303799ce           [unknown]                Sendrecv
+ 10   0 0x7ff730366304           [unknown]                File_read_at
+ 11   0 0x7ff7303637d8           [unknown]                File_close
+ 12   0 0x7ff73035c0e2           [unknown]                Allreduce
+ 13   0 0x7ff730368301           [unknown]                File_write_at
+ 14   0 0x7ff73036543f           [unknown]                File_open
+ 15   0 0x7ff7303637d8           [unknown]                File_close
+ 16   0 0x7ff73036543f           [unknown]                File_open
+---------------------------------------------------------------------------
+@--- Aggregate Time (top twenty, descending, milliseconds) ----------------
+---------------------------------------------------------------------------
+Call                 Site       Time    App%    MPI%      Count    COV
+File_write_at          13   1.36e+04   21.81   43.90          1   0.00
+File_close              7   7.32e+03   11.77   23.70          1   0.00
+File_write_at           4   6.24e+03   10.04   20.21          1   0.00
+Sendrecv                5   1.04e+03    1.67    3.37          3   0.00
+Sendrecv                9   1.03e+03    1.66    3.34          3   0.00
+Allreduce              12        586    0.94    1.89          3   0.00
+File_read_at            1        551    0.89    1.78          1   0.00
+File_read_at           10        514    0.83    1.66          1   0.00
+File_close             11       37.3    0.06    0.12          1   0.00
+File_open              16       2.49    0.00    0.01          1   0.00
+File_open               8       1.92    0.00    0.01          1   0.00
+File_open              14       1.61    0.00    0.01          1   0.00
+File_open               6       1.61    0.00    0.01          1   0.00
+File_close              2      0.467    0.00    0.00          1   0.00
+Allreduce               3       0.13    0.00    0.00          3   0.00
+File_close             15     0.0978    0.00    0.00          1   0.00
+---------------------------------------------------------------------------
+@--- Aggregate Sent Message Size (top twenty, descending, bytes) ----------
+---------------------------------------------------------------------------
+Call                 Site      Count      Total       Avrg  Sent%
+Sendrecv                5          3   1.61e+09   5.37e+08  50.00
+Sendrecv                9          3   1.61e+09   5.37e+08  50.00
+Allreduce               3          3         12          4   0.00
+Allreduce              12          3         12          4   0.00
+---------------------------------------------------------------------------
+@--- Aggregate Collective Time (top twenty, descending) -------------------
+---------------------------------------------------------------------------
+Call                 MPI Time %             Comm Size             Data Size
+Allreduce              7.77e-05          0 -        7          0 -        7
+---------------------------------------------------------------------------
+@--- Aggregate I/O Size (top twenty, descending, bytes) -------------------
+---------------------------------------------------------------------------
+Call                 Site      Count      Total       Avrg   I/O%
+File_read_at           10          1   1.07e+09   1.07e+09  25.00
+File_write_at           4          1   1.07e+09   1.07e+09  25.00
+File_read_at            1          1   1.07e+09   1.07e+09  25.00
+File_write_at          13          1   1.07e+09   1.07e+09  25.00
+---------------------------------------------------------------------------
+@--- Callsite Time statistics (all, milliseconds): 16 ---------------------
+---------------------------------------------------------------------------
+Name              Site Rank  Count      Max     Mean      Min   App%   MPI%
+Allreduce            3    0      3   0.0569   0.0434   0.0354   0.00   0.00
+Allreduce            3    *      3   0.0569   0.0434        0   0.00   0.00
+
+Allreduce           12    1      3      408      195    0.026   1.88   3.72
+Allreduce           12    *      3      408      195        0   0.94   1.89
+
+File_close           2    0      1    0.467    0.467    0.467   0.00   0.00
+File_close           2    *      1    0.467    0.467        0   0.00   0.00
+
+File_close           7    0      1 7.32e+03 7.32e+03 7.32e+03  23.55  48.29
+File_close           7    *      1 7.32e+03 7.32e+03        0  11.77  23.70
+
+File_close          11    1      1     37.3     37.3     37.3   0.12   0.24
+File_close          11    *      1     37.3     37.3        0   0.06   0.12
+
+File_close          15    1      1   0.0978   0.0978   0.0978   0.00   0.00
+File_close          15    *      1   0.0978   0.0978        0   0.00   0.00
+
+File_open            6    0      1     1.61     1.61     1.61   0.01   0.01
+File_open            6    *      1     1.61     1.61        0   0.00   0.01
+
+File_open            8    0      1     1.92     1.92     1.92   0.01   0.01
+File_open            8    *      1     1.92     1.92        0   0.00   0.01
+
+File_open           14    1      1     1.61     1.61     1.61   0.01   0.01
+File_open           14    *      1     1.61     1.61        0   0.00   0.01
+
+File_open           16    1      1     2.49     2.49     2.49   0.01   0.02
+File_open           16    *      1     2.49     2.49        0   0.00   0.01
+
+File_read_at         1    0      1      551      551      551   1.77   3.63
+File_read_at         1    *      1      551      551        0   0.89   1.78
+
+File_read_at        10    1      1      514      514      514   1.65   3.26
+File_read_at        10    *      1      514      514        0   0.83   1.66
+
+File_write_at        4    0      1 6.24e+03 6.24e+03 6.24e+03  20.08  41.18
+File_write_at        4    *      1 6.24e+03 6.24e+03        0  10.04  20.21
+
+File_write_at       13    1      1 1.36e+04 1.36e+04 1.36e+04  43.62  86.20
+File_write_at       13    *      1 1.36e+04 1.36e+04        0  21.81  43.90
+
+Sendrecv             5    0      3      713      347      154   3.35   6.87
+Sendrecv             5    *      3      713      347        0   1.67   3.37
+
+Sendrecv             9    1      3      704      344      154   3.32   6.55
+Sendrecv             9    *      3      704      344        0   1.66   3.34
+
+---------------------------------------------------------------------------
+@--- Callsite Message Sent statistics (all, sent bytes) -------------------
+---------------------------------------------------------------------------
+Name              Site Rank   Count       Max      Mean       Min       Sum
+Allreduce            3    0       3         4         4         4        12
+Allreduce            3    *       3         4         4         4        12
+
+Allreduce           12    1       3         4         4         4        12
+Allreduce           12    *       3         4         4         4        12
+
+Sendrecv             5    0       3 5.369e+08 5.369e+08 5.369e+08 1.611e+09
+Sendrecv             5    *       3 5.369e+08 5.369e+08 5.369e+08 1.611e+09
+
+Sendrecv             9    1       3 5.369e+08 5.369e+08 5.369e+08 1.611e+09
+Sendrecv             9    *       3 5.369e+08 5.369e+08 5.369e+08 1.611e+09
+
+---------------------------------------------------------------------------
+@--- Callsite I/O statistics (all, I/O bytes) -----------------------------
+---------------------------------------------------------------------------
+Name              Site Rank   Count       Max      Mean       Min       Sum
+File_read_at         1    0       1 1.074e+09 1.074e+09 1.074e+09 1.074e+09
+File_read_at         1    *       1 1.074e+09 1.074e+09 1.074e+09 1.074e+09
+
+File_read_at        10    1       1 1.074e+09 1.074e+09 1.074e+09 1.074e+09
+File_read_at        10    *       1 1.074e+09 1.074e+09 1.074e+09 1.074e+09
+
+File_write_at        4    0       1 1.074e+09 1.074e+09 1.074e+09 1.074e+09
+File_write_at        4    *       1 1.074e+09 1.074e+09 1.074e+09 1.074e+09
+
+File_write_at       13    1       1 1.074e+09 1.074e+09 1.074e+09 1.074e+09
+File_write_at       13    *       1 1.074e+09 1.074e+09 1.074e+09 1.074e+09
+
+---------------------------------------------------------------------------
+@--- End of Report --------------------------------------------------------
+---------------------------------------------------------------------------
