@@ -62,13 +62,12 @@ __global__ void BFW_phase1(int* d_Dist, int n, int r, int block_width, int block
 
     __shared__ int shared_Dist[32][32];
     shared_Dist[threadIdx.x][threadIdx.y] = d_Dist[i * n + j];
-    __syncthreads();
-
+#pragma unroll 32
     for (int k = 0; k < block_size; ++k) {
+        __syncthreads();
         if (shared_Dist[threadIdx.x][threadIdx.y] > shared_Dist[threadIdx.x][k] + shared_Dist[k][threadIdx.y]) {
             shared_Dist[threadIdx.x][threadIdx.y] = shared_Dist[threadIdx.x][k] + shared_Dist[k][threadIdx.y];
         }
-        __syncthreads();
     }
 
     d_Dist[i * n + j] = shared_Dist[threadIdx.x][threadIdx.y];
@@ -85,23 +84,25 @@ __global__ void BFW_phase2(int* d_Dist, int n, int r, int block_width, int block
     int x2 = threadIdx.x + (blockIdx.x * block_width);
     int y2 = threadIdx.y + (r * block_width);
 
+    bool flag = (x1 >= n || y2 >= n);
     bool flag1 = (x1 >= n || y1 >= n);
     bool flag2 = (x2 >= n || y2 >= n);
 
+    __shared__ int shared_Dist[32][32];
     __shared__ int shared_Dist1[32][32];
     __shared__ int shared_Dist2[32][32];
-    shared_Dist1[threadIdx.x][threadIdx.y] = d_Dist[x1 * n + y1];
-    shared_Dist2[threadIdx.x][threadIdx.y] = d_Dist[x2 * n + y2];
-    __syncthreads();
-
+    if (!flag) shared_Dist[threadIdx.x][threadIdx.y] = d_Dist[x1 * n + y2];
+    if (!flag1) shared_Dist1[threadIdx.x][threadIdx.y] = d_Dist[x1 * n + y1];
+    if (!flag2) shared_Dist2[threadIdx.x][threadIdx.y] = d_Dist[x2 * n + y2];
+#pragma unroll 32
     for (int i = 0; i < block_size; ++i) {
-        if (!flag1 && (shared_Dist1[threadIdx.x][threadIdx.y] > shared_Dist1[threadIdx.x][i] + shared_Dist1[i][threadIdx.y])) {
-            shared_Dist1[threadIdx.x][threadIdx.y] = shared_Dist1[threadIdx.x][i] + shared_Dist1[i][threadIdx.y];
-        }
-        if (!flag2 && (shared_Dist2[threadIdx.x][threadIdx.y] > shared_Dist2[threadIdx.x][i] + shared_Dist2[i][threadIdx.y])) {
-            shared_Dist2[threadIdx.x][threadIdx.y] = shared_Dist2[threadIdx.x][i] + shared_Dist2[i][threadIdx.y];
-        }
         __syncthreads();
+        if (!flag1 && (shared_Dist1[threadIdx.x][threadIdx.y] > shared_Dist[threadIdx.x][i] + shared_Dist1[i][threadIdx.y])) {
+            shared_Dist1[threadIdx.x][threadIdx.y] = shared_Dist[threadIdx.x][i] + shared_Dist1[i][threadIdx.y];
+        }
+        if (!flag2 && (shared_Dist2[threadIdx.x][threadIdx.y] > shared_Dist2[threadIdx.x][i] + shared_Dist[i][threadIdx.y])) {
+            shared_Dist2[threadIdx.x][threadIdx.y] = shared_Dist2[threadIdx.x][i] + shared_Dist[i][threadIdx.y];
+        }
     }
 
     if (!flag1) d_Dist[x1 * n + y1] = shared_Dist1[threadIdx.x][threadIdx.y];
@@ -111,34 +112,47 @@ __global__ void BFW_phase2(int* d_Dist, int n, int r, int block_width, int block
 
 
 __global__ void BFW_phase3(int* d_Dist, int n, int r, int block_width, int block_size) {
-    if (blockId.x == r || blockId.y == r) return;
+    if (blockIdx.x == r || blockIdx.y == r) return;
 
     int i = threadIdx.x + (blockIdx.x * block_width);
     int j = threadIdx.y + (blockIdx.y * block_width);
 
+    int x1 = threadIdx.x + (r * block_width);
+    int y1 = threadIdx.y + (blockIdx.y * block_width);
+
+    int x2 = threadIdx.x + (blockIdx.x * block_width);
+    int y2 = threadIdx.y + (r * block_width);
+
     if (i >= n || j >= n) return;
+    bool flag1 = (x1 >= n || y1 >= n);
+    bool flag2 = (x2 >= n || y2 >= n);
 
     __shared__ int shared_Dist[32][32];
-    shared_Dist[threadIdx.x][threadIdx.y] = d_Dist[i * n + j];
-    __syncthreads();
+    __shared__ int shared_Dist1[32][32];
+    __shared__ int shared_Dist2[32][32];
 
+    if (!flag1) shared_Dist1[threadIdx.x][threadIdx.y] = d_Dist[x1 * n + y1];
+    if (!flag2) shared_Dist2[threadIdx.x][threadIdx.y] = d_Dist[x2 * n + y2];
+    shared_Dist[threadIdx.x][threadIdx.y] = d_Dist[i * n + j];
+#pragma unroll 32
     for (int k = 0; k < block_size; ++k) {
-        if (shared_Dist[threadIdx.x][threadIdx.y] > shared_Dist[threadIdx.x][k] + shared_Dist[k][threadIdx.y]) {
-            shared_Dist[threadIdx.x][threadIdx.y] = shared_Dist[threadIdx.x][k] + shared_Dist[k][threadIdx.y];
-        }
         __syncthreads();
+        if (shared_Dist[threadIdx.x][threadIdx.y] > shared_Dist1[threadIdx.x][k] + shared_Dist2[k][threadIdx.y]) {
+            shared_Dist[threadIdx.x][threadIdx.y] = shared_Dist1[threadIdx.x][k] + shared_Dist2[k][threadIdx.y];
+        }
     }
+
+    d_Dist[i * n + j] = shared_Dist[threadIdx.x][threadIdx.y];
 }
 
 
 
 int main(int argc, char* argv[]) {
-    assert(argc == 3);
+    // assert(argc == 3);
     input(argv[1]);
-    int B = 512;
 
-    cudaGetDeviceProperties(&prop, DEV_NO);
-    printf("maxThreasPerBlock = %d, sharedMemPerBlock = %d", prop.maxThreasPerBlock, prop.sharedMemPerBlock);
+    // cudaGetDeviceProperties(&prop, DEV_NO);
+    // printf("maxThreasPerBlock = %d, sharedMemPerBlock = %d", prop.maxThreasPerBlock, prop.sharedMemPerBlock);
 
     // use cuda progamming to complete blocked FW algorithm
 
@@ -159,10 +173,15 @@ int main(int argc, char* argv[]) {
 
 
     for (int r = 0; r < block_num; ++r) {
-        BFW_phase1<<<1, block_size>>>(d_Dist, n, r, block_width, block_size);
-        BFW_phase2<<<grid_size2, block_size>>>(d_Dist, n, r, block_width, block_size);
-        BFW_phase3<<<grid_size3, block_size>>>(d_Dist, n, r, block_width, block_size);
+        int cur_block_size = min(block_width, n - r * block_width);
+
+        BFW_phase1<<<1, block_size>>>(d_Dist, n, r, block_width, cur_block_size);
+        BFW_phase2<<<grid_size2, block_size>>>(d_Dist, n, r, block_width, cur_block_size);
+        BFW_phase3<<<grid_size3, block_size>>>(d_Dist, n, r, block_width, cur_block_size);
     }
+
+    // copy from device to host
+    cudaMemcpy(Dist, d_Dist, size, cudaMemcpyDeviceToHost);
 
 
     //block_FW(B);
